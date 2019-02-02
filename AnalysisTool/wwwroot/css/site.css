@@ -3,6 +3,18 @@ for details on configuring this project to bundle and minify static web assets. 
 body {
     padding-top: 50px;
     padding-bottom: 20px;
+    background-color: #313656;
+    color: white;
+    
+}
+
+.body-start {
+
+    background-image: url('/images/brain.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: contain;
 }
 
 /* Wrapping element */
@@ -12,26 +24,71 @@ body {
     padding-right: 15px;
 }
 
-/* Carousel */
-.carousel-caption p {
-    font-size: 20px;
-    line-height: 1.4;
+a {
+    color: white;
 }
 
-/* Make .svg files in the carousel display properly in older browsers */
-.carousel-inner .item img[src$=".svg"] {
-    width: 100%;
+a:hover {
+    color: white;
+    text-decoration: none;
 }
 
-/* QR code generator */
-#qrCode {
-    margin: 15px;
+a:link {
+    color: white;
+    text-decoration: none;
 }
 
-/* Hide/rearrange for smaller screens */
-@media screen and (max-width: 767px) {
-    /* Hide captions */
-    .carousel-caption {
-        display: none;
+a:visited {
+    color: white;
+    text-decoration: none;
+}
+
+a:active {
+    color: white;
+    text-decoration: none;
+}
+
+a.dropdown-item {
+    color: black;
+}
+
+.padding-top {
+    padding-top: 50px;
+}
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+    .start-button {
+        font-size: 25px;        
     }
 }
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .start-button {
+        font-size: 50px;
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .start-button {
+        font-size: 75px;
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .start-button {
+        font-size: 100px;
+        text-align:center;
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .start-button {
+        font-size: 125px;
+    }
+}
+
