@@ -20,17 +20,24 @@ namespace AnalysisTool.Controllers
         // GET
         public IActionResult Assessment()
         {
-            List<string> assessments = new List<string> {
+            List<string> questions = new List<string> {
             "../images/stroop test.gif",
-            "../images/stroop test.gif"};
+            "../images/stroop test blue.gif"};
 
-            return View(assessments);
+            return View(questions);
         }
 
         public PartialViewResult _Template(List<string> assessments)
         {  //Gets the requested parameter and returns the view page
 
             return PartialView(assessments);
+        }
+
+        public IActionResult Completed()
+        {
+            bool moreAssessments = true;
+
+            return View(moreAssessments);
         }
     }
 }

@@ -17,6 +17,10 @@ body {
     background-size: contain;
 }
 
+input, select, textarea {
+    color: black;
+}
+
 /* Wrapping element */
 /* Set some basic padding to keep content from hitting the edges */
 .body-content {
@@ -54,6 +58,10 @@ a.dropdown-item {
 
 .padding-top {
     padding-top: 50px;
+}
+
+.padding-bottom {
+    padding-bottom: 50px;
 }
 
 .divfit img {

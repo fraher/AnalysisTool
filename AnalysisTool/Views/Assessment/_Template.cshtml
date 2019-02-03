@@ -1,13 +1,33 @@
 ﻿@model IEnumerable<string>
 
-<div>
-
-    <!-- Take each question and parse through it-->
-    <div class="col-md-12">
+<!-- Take each question and parse through it-->
+<div id="thisAssessment" class="carousel slide" data-ride="carousel" data-interval="false">
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+        @{int i = 0;}
         @foreach(var item in Model) {
 
-            <img style="width:100%" src="@Html.DisplayFor(modelItem => item)" />
+
+        <div class="item @(i == 0 ? "" : "active")">
+
+            <input type="text" />
+            <img src="@Html.DisplayFor(modelItem => item)">
+        </div>
+        i++;
+
+
+
+
+
         }
+
+        <!-- Next Problem -->
+        <a id="btnNextQuestion" class="btn btn-primary pull-right" href="#thisAssessment" data-slide="next" onclick="CheckLast(@Model.Count());">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+            <span class="sr-only">Next</span>
+        </a>
+
     </div>
 
+    
 </div>

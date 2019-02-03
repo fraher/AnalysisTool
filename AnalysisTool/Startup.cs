@@ -35,10 +35,11 @@ namespace AnalysisTool
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
-            var connection = @"Server=(localdb)\mssqllocaldb;Database=FishDreams;Trusted_Connection=True;ConnectRetryCount=0";
+        
             services.AddDbContext<AnalysisToolContext>
-                (options => options.UseSqlServer(connection));
+                (options => options.UseSqlServer(Configuration.GetConnectionString("AnalysisToolDatabase")));
         }
+        
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)

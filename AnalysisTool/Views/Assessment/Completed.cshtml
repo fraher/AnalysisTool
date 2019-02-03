@@ -1,5 +1,7 @@
-﻿@{
-    ViewData["Title"] = "Fish Dreams - Settings";
+﻿@model Boolean
+
+@{
+    ViewData["Title"] = "Fish Dreams - Assessment Complete";
 }
 
 <div class="row">
@@ -10,15 +12,19 @@
     </div>
 </div>
 
-
 <div class="row padding-top">
     <div class="text-center">
-        Settings
+        Congratuations, you have completed this assessment!
     </div>
 </div>
 
 <div class="row padding-top">
     <div class="text-center">
-        @Html.ActionLink("Sharing", "Index", "Sharing")
+        @if (Model)
+        {
+            <a href="@Url.Action("Assessment", "Assessment")">Next Assessment</a>
+        }
+                
+        
     </div>
 </div>

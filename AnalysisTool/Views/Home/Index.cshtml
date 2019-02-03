@@ -2,30 +2,48 @@
     ViewData["Title"] = "Fish Dreams";
 }
 
-<div class="body-start row">
-    <!-- Top Nav Bar -->
-    <div class="row">
-        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-            @Html.ActionLink("Settings", "Index", "Settings")
+<div class="body-start navbar navbar-fixed-top row">
+    <!-- Settings/User -->
+    <div class="row padding-top">
+        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+        <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+            <h4>@Html.ActionLink("Settings", "Index", "Settings")</h4>
         </div>
-        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-right">
-            hello, Erika
+        <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 text-right">
+            <h4>Hello, Erika</h4>
         </div>
+        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+
     </div>
 
     <!-- Center Start -->
-    <div class="row">
+    <div class="row padding-top">
         <div class="vertical-center text-center start-button">
-            @Html.ActionLink("Start", "Mood", "Assessment")
+            <h1>@Html.ActionLink("Start", "Mood", "Assessment")</h1>
         </div>
     </div>
 
-    <!-- Top Nav Bar -->
-    <div class="row">
-        <div class="vertical-center text-center">
-            @Html.ActionLink("About", "About")
+    <!-- Footer -->
+    <div class="navbar navbar-fixed-bottom row padding-bottom">
+
+        <!-- Reports/About -->
+        <div class="row">
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+
+            <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                <h4>@Html.ActionLink("Reports", "Index", "Report")</h4>
+            </div>
+            <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 text-right">
+                <h4>@Html.ActionLink("About", "About")</h4>
+            </div>
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+
         </div>
+
+
+
     </div>
 
-    
+
+
 </div>

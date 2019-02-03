@@ -13,4 +13,8 @@
     <Folder Include="ViewModels\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="wwwroot\js\Assessment\_Template.js" />
+  </ItemGroup>
+
 </Project>

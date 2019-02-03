@@ -14,7 +14,12 @@ namespace AnalysisTool.Models
             : base(options)
         { }
 
-        
+        DbSet<User> Users { get; set; }
+        DbSet<Assessment> Assessments { get; set; }
+        DbSet<AssessmentStep> AssessmentSteps { get; set; }
+        DbSet<AssessmentSession> AssessmentSessions { get; set; }
+        DbSet<AssessmentSessionStepResult> AssessmentSessionStepResults { get; set; }
+        DbSet<UserAssessment> UserAssessments { get; set; }
     }
 
 }
