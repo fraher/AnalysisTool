@@ -1,4 +1,6 @@
-﻿@{
+﻿@model AnalysisTool.ViewModels.HomeViewModel
+
+@{
     ViewData["Title"] = "Fish Dreams";
 }
 
@@ -10,7 +12,7 @@
             <h4>@Html.ActionLink("Settings", "Index", "Settings")</h4>
         </div>
         <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 text-right">
-            <h4>Hello, Erika</h4>
+            <h4>Hello, @Model.User.UserName</h4>
         </div>
         <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
 

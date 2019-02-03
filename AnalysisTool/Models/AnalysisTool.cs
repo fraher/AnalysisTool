@@ -14,12 +14,12 @@ namespace AnalysisTool.Models
             : base(options)
         { }
 
-        DbSet<User> Users { get; set; }
-        DbSet<Assessment> Assessments { get; set; }
-        DbSet<AssessmentStep> AssessmentSteps { get; set; }
-        DbSet<AssessmentSession> AssessmentSessions { get; set; }
-        DbSet<AssessmentSessionStepResult> AssessmentSessionStepResults { get; set; }
-        DbSet<UserAssessment> UserAssessments { get; set; }
+        public DbSet<User> Users { get; set; }
+        public DbSet<Assessment> Assessments { get; set; }
+        public DbSet<AssessmentStep> AssessmentSteps { get; set; }
+        public DbSet<AssessmentSession> AssessmentSessions { get; set; }
+        public DbSet<AssessmentSessionStepResult> AssessmentSessionStepResults { get; set; }
+        public DbSet<UserAssessment> UserAssessments { get; set; }
     }
 
 }

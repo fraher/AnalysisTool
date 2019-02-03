@@ -5,14 +5,28 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using AnalysisTool.Models;
+using AnalysisTool.ViewModels;
 
 namespace AnalysisTool.Controllers
 {
     public class HomeController : Controller
     {
+        private AnalysisToolContext _context { get; set; }
+
+        public HomeController(AnalysisToolContext context)
+        {
+            _context = context;
+        }
+
         public IActionResult Index()
         {
-            return View();
+            var model = new HomeViewModel();
+
+
+            model.User = _context.Users.FirstOrDefault(u => u.UserId == 1);
+            
+
+            return View(model);
         }
 
         public IActionResult About()

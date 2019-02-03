@@ -8,6 +8,13 @@ namespace AnalysisTool.Models
 {
     public class User
     {
+        private AnalysisToolContext _context { get; set; }
+
+        public User(AnalysisToolContext context)
+        {
+            _context = context;
+        }
+
         [Required]
         public int UserId { get; set; }
 
@@ -19,5 +26,18 @@ namespace AnalysisTool.Models
 
         [Required]
         public int BirthYear { get; set; }        
+
+        public void Add(User user)
+        {
+            _context.Users.Add(user);
+            _context.SaveChanges();            
+        }
+
+        public User Get(int userId)
+        {
+            return _context.Users.FirstOrDefault(e => e.UserId == userId);
+        }
     }
+
+
 }
