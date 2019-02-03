@@ -11,10 +11,10 @@
         <div class="item @(i != 0 ? "" : "active")">
             
 
-            @if (i == 0)
+            @if (i == 0 || item != "")
             {                
-                <img src="@Html.DisplayFor(modelItem => item)">
-            }
+                <img src="@Html.DisplayFor(modelItem => item)" />
+            }            
             else
             {
                 <div class="row text-center">                    
