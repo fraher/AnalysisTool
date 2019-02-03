@@ -1,4 +1,6 @@
-﻿@{
+﻿
+
+@{
     ViewData["Title"] = "Fish Dreams - Assessment";
 }
 
@@ -13,3 +15,8 @@
         @Html.ActionLink("Return Home", "Index", "Home")
     </div>
 </div>
+
+
+
+@Html.Partial("_Template", new { firstName = "Erika" })
+
