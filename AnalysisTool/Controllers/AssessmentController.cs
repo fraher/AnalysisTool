@@ -24,8 +24,7 @@ namespace AnalysisTool.Controllers
         public IActionResult Assessment()
         {
             List<string> questions = new List<string> {
-            "../images/stroop test.gif",
-            "../images/stroop test blue.gif"};
+            "../images/stroop test.gif", ""};
 
             return View(questions);
         }

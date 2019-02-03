@@ -20,8 +20,11 @@
 
     <!-- Center Start -->
     <div class="row padding-top">
-        <div class="vertical-center text-center start-button">
-            <h1>@Html.ActionLink("Start", "Mood", "Assessment")</h1>
+        <div class="vertical-center text-center">
+            
+            <div class="row padding-top hidden-md hidden-lg"></div>
+            <a href="@Url.Action("Mood", "Assessment")"><img src="~/images/start.png" style="width: 50%;"/></a>
+            
         </div>
     </div>
 

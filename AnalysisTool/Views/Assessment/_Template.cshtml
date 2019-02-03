@@ -8,17 +8,27 @@
         @foreach(var item in Model) {
 
 
-        <div class="item @(i == 0 ? "" : "active")">
+        <div class="item @(i != 0 ? "" : "active")">
+            
 
-            <input type="text" />
-            <img src="@Html.DisplayFor(modelItem => item)">
+            @if (i == 0)
+            {                
+                <img src="@Html.DisplayFor(modelItem => item)">
+            }
+            else
+            {
+                <div class="row text-center">                    
+                    <label>What is the current time?</label>
+                </div>
+                <div class="row text-center">
+                    <input type="text" id="txtCurrentTime" />
+                </div>
+            }
+
         </div>
-        i++;
 
-
-
-
-
+            i++;
+            
         }
 
         <!-- Next Problem -->
