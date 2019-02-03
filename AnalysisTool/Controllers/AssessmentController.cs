@@ -16,10 +16,21 @@ namespace AnalysisTool.Controllers
             return View();
         }
 
+
         // GET
         public IActionResult Assessment()
         {
-            return View();
+            List<string> assessments = new List<string> {
+            "../images/stroop test.gif",
+            "../images/stroop test.gif"};
+
+            return View(assessments);
+        }
+
+        public PartialViewResult _Template(List<string> assessments)
+        {  //Gets the requested parameter and returns the view page
+
+            return PartialView(assessments);
         }
     }
 }

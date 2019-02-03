@@ -1,12 +1,13 @@
-﻿
-
+﻿@model IEnumerable<string>
 
 <div>
 
-
-
+    <!-- Take each question and parse through it-->
     <div class="col-md-12">
-        <img style="width:100%" src="~/images/stroop test.gif" />
+        @foreach(var item in Model) {
+
+            <img style="width:100%" src="@Html.DisplayFor(modelItem => item)" />
+        }
     </div>
 
 </div>

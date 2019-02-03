@@ -1,4 +1,4 @@
-﻿
+﻿@model List<string>
 
 @{
     ViewData["Title"] = "Fish Dreams - Assessment";
@@ -17,6 +17,7 @@
 </div>
 
 
-
-@Html.Partial("_Template", new { firstName = "Erika" })
-
+<div class="padding-top">
+    @Html.Partial("_Template", Model);
+    
+</div>
