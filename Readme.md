@@ -1,5 +1,5 @@
 # Fish Dreams 
-## Logitudinal Tracking of Cognitive Impairment
+## Longitudinal Tracking of Cognitive Impairment
 
 **Introduction**
 This tool allows providers to track cognitive assessments for high-risk MCI patients. 
