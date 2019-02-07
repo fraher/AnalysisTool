@@ -44,12 +44,12 @@ The software is designed to be a mobile-first responsive web application. The fo
 
 
 ### Acknowledgements
-Sarah Price - sarah.price@utexas.edu
-Adriana Cardenas - adri.cardenas@utexas.edu
-CJ Fraher - fraher@gmail.com
-Jessica Moore Bonner - tsumakiri@gmail.com
-Reva Schweitzer - revaschweitzer@gmail.com
+* Sarah Price - sarah.price@utexas.edu
+* Adriana Cardenas - adri.cardenas@utexas.edu
+* CJ Fraher - fraher@gmail.com
+* Jessica Moore Bonner - tsumakiri@gmail.com
+* Reva Schweitzer - revaschweitzer@gmail.com
 
 
 ### License
-License Type: <a href='https://opensource.org/licenses/MIT'>MIT License</a>
+<a href='https://opensource.org/licenses/MIT'>MIT License</a>
