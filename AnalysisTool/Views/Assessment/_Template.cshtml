@@ -5,24 +5,46 @@
     <!-- Wrapper for slides -->
     <div class="carousel-inner">
         @{int i = 0;}
-        @foreach(var item in Model) {
+        @foreach (var item in Model) {
 
 
         <div class="item @(i != 0 ? "" : "active")">
-            
 
-            @if (i == 0 || item != "")
-            {                
+
+            @if (i == 0 || item != "" && !item.Contains('{'))
+            {
                 <img src="@Html.DisplayFor(modelItem => item)" />
-            }            
+            }
             else
             {
-                <div class="row text-center">                    
-                    <label>What is the current time?</label>
-                </div>
-                <div class="row text-center">
-                    <input type="text" id="txtCurrentTime" />
-                </div>
+                if (item.Contains('{'))
+                {
+                    dynamic assessmentItem = Newtonsoft.Json.JsonConvert.DeserializeObject(item);
+
+                    <div class="row col-md-12 col-sm-12 col-xs-12">@assessmentItem.instructions</div>
+
+                    if (assessmentItem.inputType == "textbox")
+                    {
+                        <div class="row text-center"><input type="text" /></div>
+                    }
+                    else
+                    {
+                        <div class="row text-center" style="@assessmentItem.css">@assessmentItem.text</div>
+                    }
+
+                }
+                else
+                {
+                    <div class="row text-center">
+                        <label>What is the current time?</label>
+                    </div>
+                    <div class="row text-center">
+                        <input type="text" id="txtCurrentTime" />
+                    </div>
+                }
+
+
+
             }
 
         </div>
