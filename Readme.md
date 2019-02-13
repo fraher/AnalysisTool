@@ -1,5 +1,5 @@
 # Fish Dreams 
-## Logitudinal Tracking of Cognitive Impairment
+## Longitudinal Tracking of Cognitive Impairment
 
 **Introduction**
 This tool allows providers to track cognitive assessments for high-risk MCI patients. 
@@ -43,13 +43,13 @@ The software is designed to be a mobile-first responsive web application. The fo
 1. MS SQL
 
 
-### Acknoledgements
-Sarah Price - sarah.price@utexas.edu
-Adriana Cardenas - adri.cardenas@utexas.edu
-CJ Fraher - fraher@gmail.com
-Jessica Moore Bonner - tsumakiri@gmail.com
-Reva Schweitzer - revaschweitzer@gmail.com
+### Acknowledgements
+* Sarah Price - sarah.price@utexas.edu
+* Adriana Cardenas - adri.cardenas@utexas.edu
+* CJ Fraher - fraher@gmail.com
+* Jessica Moore Bonner - tsumakiri@gmail.com
+* Reva Schweitzer - revaschweitzer@gmail.com
 
 
 ### License
-License Type: <a href='https://opensource.org/licenses/MIT'>MIT License</a>
+<a href='https://opensource.org/licenses/MIT'>MIT License</a>
