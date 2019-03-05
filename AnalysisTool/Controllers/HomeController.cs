@@ -6,27 +6,27 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using AnalysisTool.Models;
 using AnalysisTool.ViewModels;
+using AnalysisTool.Persistence;
 
 namespace AnalysisTool.Controllers
 {
     public class HomeController : Controller
     {
-        private AnalysisToolContext _context { get; set; }
 
-        public HomeController(AnalysisToolContext context)
+        private readonly IUnitOfWork _unitOfWork;
+        private HomeViewModel _model;
+
+        public HomeController(IUnitOfWork unitOfWork)
         {
-            _context = context;
+            _unitOfWork = unitOfWork;
+            _model = new HomeViewModel();
         }
 
         public IActionResult Index()
         {
-            var model = new HomeViewModel();
-
-
-            model.User = _context.Users.FirstOrDefault(u => u.UserId == 1);
+            _model.User = _unitOfWork.Users.GetAll().First();
             
-
-            return View(model);
+            return View(_model);
         }
 
         public IActionResult About()

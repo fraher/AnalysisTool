@@ -10,8 +10,6 @@ namespace AnalysisTool.ViewModels
     public class AssessmentViewModel
     {
         public User User { get; set; }
-        public Assessment Assessment { get; set; }
-        public List<AssessmentStep> AssessmentSteps { get; set; }
-        public AssessmentSession AssessmentSession { get; set; }               
+        public Assessment Assessment { get; set; }                      
     }
 }

@@ -1,0 +1,72 @@
+{
+    "AssessmentId": 0,
+    "Name": "Mock Test",
+    "Version": "1.0.0",
+    "Instructions": "Press the letter corresponding color shown (r = RED, g = GREEN, b = BLUE, y = YELLOW). Press the appropriate key when the text shows.",
+    "Steps": [
+        {
+            "AssessmentStepId": 0,
+            "Name": "Question 1",      
+            "PossiblePoints": 1,      
+            "MetaDatas": { 
+                "ResponseType": "True or False", 
+                "InformativeText": "Step 1 Instruction", 
+                "DisplayParams": {
+                    "DisplayType": "text",
+                    "Content": "Blue",
+                    "Css": "color:Purple; font-size:72px" 
+                },                 
+            }            
+        },
+        {
+            "AssessmentStepId": 1,
+            "Name": "Question 2",
+            "PossiblePoints": 1,
+            "MetaDatas": { 
+                "ResponseType": "True or False", 
+                "InformativeText": "Some information about Step 2", 
+                "DisplayParams": {
+                    "DisplayType": "text",
+                    "Content": "Blue",
+                    "Css": "color:Purple; font-size:72px" 
+                }
+            }                
+        },        
+        {
+            "AssessmentStepId": 2,
+            "Name": "Question 3",
+            "PossiblePoints": 1,
+            "MetaDatas": { 
+                "ResponseType": "Text", 
+                "InformativeText": "Please enter your name",                 
+            }     
+        },
+        {
+            "AssessmentStepId": 3,
+            "Name": "Question 4",
+            "PossiblePoints": 1,
+            "MetaDatas": { 
+                "ResponseType": "Timed Touch", 
+                "InformativeText": "Some information about Step 2", 
+                "DisplayParams": {
+                    "DisplayType": "image",
+                    "Content": "http://www.imagecollectionstuff.notreal/012345"                    
+                }
+            }                
+        },
+        {            
+            "AssessmentStepId": 4,
+            "PossiblePoints": 1,
+            "MetaDatas": { 
+                "ResponseType": "Text",                 
+                "DisplayParams": {
+                    "DisplayType": "image",
+                    "Content": "http://www.imagecollectionstuff.notreal/456789"                    
+                }
+            }                
+        }
+
+    ]
+}
+
+

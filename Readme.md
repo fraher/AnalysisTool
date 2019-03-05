@@ -40,7 +40,58 @@ The software is designed to be a mobile-first responsive web application. The fo
 2. Entity Framework
 
 ### Database
-1. MS SQL
+1. MongoDb
+
+### Assessment Standard Template
+In order to create the standard that will be used for all assessment types, a commonly utilized script type should be used. In this case we are using the JavaScript Object Notation (JSON) format. Due to the anticipated dynamic nature of each assessment this is expected to evolve prior to the release of version 1.0. The goal is to establish a template that can vary greatly but using common elements and steps.
+
+The following example is the current state of the template for a mock test containing 4 questions:
+
+```javascript
+
+{
+    "AssessmentId": "ABCD",
+    "Name": "Mock Stroop Test",
+    "Version": "1.0.0",
+    "Instructions": "Press the letter corresponding color shown (r = RED, g = GREEN, b = BLUE, y = YELLOW). Press the appropriate key when the text shows.",
+    "Steps": [
+        {
+            "StepNumber": 1,
+            "Name": "Question 1",      
+            "InformativeText": "Step 1 Instruction", 
+            "PossiblePoints": 1,      
+            "DisplayParams": {
+                    "DisplayType": "text",
+                    "Content": "Blue",
+                    "Css": "color:Purple; font-size:72px" 
+                }, 
+            "ResponseParams": { 
+                "ResponseType": "text",                 
+            }            
+        },
+        {
+            "StepNumber": 2,
+            "Name": "Question 2",      
+            "InformativeText": "Step 2 Instruction", 
+            "PossiblePoints": 1,      
+            "DisplayParams": {
+                    "DisplayType": "text",
+                    "Content": "Yellow",
+                    "Css": "color:Blue; font-size:72px" 
+                }, 
+            "ResponseParams": { 
+                "ResponseType": "True or False",                 
+            }            
+        }
+
+    ]
+}
+
+
+
+
+```
+
 
 
 ### Acknowledgements
@@ -49,6 +100,9 @@ The software is designed to be a mobile-first responsive web application. The fo
 * CJ Fraher - fraher@gmail.com
 * Jessica Moore Bonner - tsumakiri@gmail.com
 * Reva Schweitzer - revaschweitzer@gmail.com
+
+### Credits
+Royalty free test images currently in use are provided through <a href='https://unsplash.com/'>Unsplash</a>
 
 
 ### License

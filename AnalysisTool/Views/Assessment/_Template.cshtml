@@ -1,65 +1,84 @@
-﻿@model IEnumerable<string>
-
+﻿@model AnalysisTool.ViewModels.AssessmentViewModel
 <!-- Take each question and parse through it-->
 <div id="thisAssessment" class="carousel slide" data-ride="carousel" data-interval="false">
     <!-- Wrapper for slides -->
     <div class="carousel-inner">
-        @{int i = 0;}
-        @foreach (var item in Model) {
-
-
-        <div class="item @(i != 0 ? "" : "active")">
-
-
-            @if (i == 0 || item != "" && !item.Contains('{'))
-            {
-                <img src="@Html.DisplayFor(modelItem => item)" />
-            }
-            else
-            {
-                if (item.Contains('{'))
-                {
-                    dynamic assessmentItem = Newtonsoft.Json.JsonConvert.DeserializeObject(item);
-
-                    <div class="row col-md-12 col-sm-12 col-xs-12">@assessmentItem.instructions</div>
-
-                    if (assessmentItem.inputType == "textbox")
-                    {
-                        <div class="row text-center"><input type="text" /></div>
-                    }
-                    else
-                    {
-                        <div class="row text-center" style="@assessmentItem.css">@assessmentItem.text</div>
-                    }
-
-                }
-                else
-                {
-                    <div class="row text-center">
-                        <label>What is the current time?</label>
-                    </div>
-                    <div class="row text-center">
-                        <input type="text" id="txtCurrentTime" />
-                    </div>
-                }
 
 
 
-            }
+        <div class="item active">
+            @* First window are the instructions*@
+            <div class="row text-center">
+                <h3>@Model.Assessment.Name @Model.Assessment.Version</h3>
+                <h5>@Model.Assessment.Instructions</h5>
 
+                <a id="btnNextQuestion" class="btn btn-primary text-center" href="#thisAssessment" data-slide="next">
+                    <span>Start</span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
         </div>
 
-            i++;
-            
+        
+
+        @foreach (var item in Model.Assessment.Steps)
+        {
+            <div class="item">
+
+                @* Informative Text for the Assessment Step*@
+                <div class="row col-md-12 col-sm-12 col-xs-12">@item.InformativeText</div>
+
+                @* Display of Question or Visual*@
+                <div class="row col-md-12 col-sm-12 col-xs-12">
+
+                    @switch (item.DisplayParams.DisplayType.ToLower())
+                    {
+                        case "text":
+                            <div class="row text-center" style="@item.DisplayParams.Css">@item.DisplayParams.Content</div>
+                            break;
+                        case "image":
+                            <div class="row text-center">
+                                <img src="@item.DisplayParams.Content" style="@item.DisplayParams.Css" />
+                            </div>
+                            break;
+                        default:
+                            break;
+                    }
+
+                </div>
+
+                @* Response Type *@
+                @switch (item.ResponseParams.ResponseType.ToLower())
+                {
+                    case "text":
+                        <div class="row text-center">
+                            <input type="text" />
+                        </div>
+                        <div class="row text-center">
+                            <a id="btnNextQuestion" class="btn btn-primary" href="#thisAssessment" data-slide="next" onclick="CheckLast(@Model.Assessment.Steps.Count());">
+                                <span>Next</span>
+                            </a>
+                        </div>
+                        break;
+                    case "true or false":
+                        <div class="row text-center">
+                            <div class="row text-center">
+                                <input type="button" value="True" data-slide="next" onclick="CheckLast(@Model.Assessment.Steps.Count());" />
+                            </div>
+                            <div class="row text-center">
+                                <input type="button" value="False" data-slide="next" onclick="CheckLast(@Model.Assessment.Steps.Count());" />
+                            </div>
+                        </div>
+                        break;
+                    default:
+                        <div class="row text-center">Missing Question Type</div>
+                        <a id="btnNextQuestion" class="btn btn-primary pull-right" href="#thisAssessment" data-slide="next" onclick="CheckLast(@Model.Assessment.Steps.Count());">
+                            <span class="glyphicon glyphicon-chevron-right"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                        break;
+                }
+            </div>            
         }
-
-        <!-- Next Problem -->
-        <a id="btnNextQuestion" class="btn btn-primary pull-right" href="#thisAssessment" data-slide="next" onclick="CheckLast(@Model.Count());">
-            <span class="glyphicon glyphicon-chevron-right"></span>
-            <span class="sr-only">Next</span>
-        </a>
-
     </div>
-
-    
 </div>

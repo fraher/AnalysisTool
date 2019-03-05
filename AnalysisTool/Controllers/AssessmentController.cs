@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AnalysisTool.Models;
+using AnalysisTool.Persistence;
+using AnalysisTool.Services;
 using AnalysisTool.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
@@ -13,11 +15,13 @@ namespace AnalysisTool.Controllers
 {
     public class AssessmentController : Controller
     {
-        private AnalysisToolContext _context { get; set; }
+        private readonly IUnitOfWork _unitOfWork;
+        private AssessmentViewModel _model;
 
-        public AssessmentController(AnalysisToolContext context)
+        public AssessmentController(IUnitOfWork unitOfWork)
         {
-            _context = context;
+            _unitOfWork = unitOfWork;
+            _model = new AssessmentViewModel();
         }
 
         // GET: /<controller>/
@@ -30,24 +34,15 @@ namespace AnalysisTool.Controllers
         // GET
         public IActionResult Assessment()
         {
-
-            var model = new AssessmentViewModel();
-
-
-            model.Assessment = _context.Assessments.FirstOrDefault(x => x.AssessmentId == 1);
-            model.AssessmentSteps = _context.AssessmentSteps.Where(x => x.AssessmentId == 1).ToList();
+            _model.Assessment = _unitOfWork.Assessments.SingleOrDefault(x => x.Name == "Mock Stroop Test");
             
-
-            List<string> questions = new List<string> {
-            "../images/stroop test.gif", model.AssessmentSteps[0].MetaData, model.AssessmentSteps[1].MetaData, model.AssessmentSteps[2].MetaData, "../images/coris_blocks.gif"};
-
-            return View(questions);
+            return View(_model);
         }
 
-        public PartialViewResult _Template(List<string> assessments)
+        public PartialViewResult _Template(AssessmentViewModel assessment)
         {  //Gets the requested parameter and returns the view page
 
-            return PartialView(assessments);
+            return PartialView(assessment);
         }
 
         public IActionResult Completed()
