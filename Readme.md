@@ -37,7 +37,7 @@ The software is designed to be a mobile-first responsive web application. The fo
 
 ### Frameworks
 1. .Net Core 2.2
-2. Entity Framework
+2. MongoClient
 
 ### Database
 1. MongoDb
