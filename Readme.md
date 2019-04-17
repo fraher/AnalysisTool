@@ -148,6 +148,10 @@ The following example is the current state of the template for a mock test conta
 - [ ]	FDA Requirements	
 - [ ]	Research Assessment Licenses	
 
+### Current Members
+* Sarah Price - sarah.price@utexas.edu
+* Adriana Cardenas - adri.cardenas@utexas.edu
+* CJ Fraher - fraher@gmail.com
 
 ### Acknowledgements
 We would first like to thank the LifeSci Hack conference organizers for giving us the opporunity to help the community and open-source healthcare world. These members are: Sarah Sharif, Suliman Sharif, Scott Collins, and Amanda Ross
@@ -165,11 +169,6 @@ This project could not have started without the wonderful work and effort of the
 This project still continues today thanks to those who supported the LifeSci Hack event, a big shout out to:
 * moz://a
 * The Leona M. and Harry B. Helmsley Charitable Trust
-
-### Current Members
-* Sarah Price - sarah.price@utexas.edu
-* Adriana Cardenas - adri.cardenas@utexas.edu
-* CJ Fraher - fraher@gmail.com
 
 ### Credits
 Royalty free test images currently in use are provided through <a href='https://unsplash.com/'>Unsplash</a>
