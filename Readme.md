@@ -24,17 +24,17 @@ This web-based application is intended to be run on touch-enabled devices which 
 **Demo Images**:  
 <p float="left">
 	
-<img src="https://github.com/fraher/AnalysisTool/blob/master/AnalysisTool/Demo%20Images/StartPage.png" alt="drawing" width="200"/>	
+<img src="https://github.com/fraher/AnalysisTool/blob/master/AnalysisTool/Demo%20Images/StartPage.png" alt="Start Page" width="200"/>	
 
-<img src="https://github.com/fraher/AnalysisTool/blob/master/AnalysisTool/Demo%20Images/CorsiBlocks.png" alt="drawing" width="200"/>
-<img src="https://github.com/fraher/AnalysisTool/blob/master/AnalysisTool/Demo%20Images/AssessmentQuestion.png" alt="drawing" width="200"/>
-<img src="https://github.com/fraher/AnalysisTool/blob/master/AnalysisTool/Demo%20Images/StroopTest.png" alt="drawing" width="200"/>
+<img src="https://github.com/fraher/AnalysisTool/blob/master/AnalysisTool/Demo%20Images/CorsiBlocks.png" alt="Corsi Blocks" width="200"/>
+<img src="https://github.com/fraher/AnalysisTool/blob/master/AnalysisTool/Demo%20Images/AssessmentQuestion.png" alt="Assessment Question" width="200"/>
+<img src="https://github.com/fraher/AnalysisTool/blob/master/AnalysisTool/Demo%20Images/StroopTest.png" alt="Stroop Test" width="200"/>
 	
-<img src="https://github.com/fraher/AnalysisTool/blob/master/AnalysisTool/Demo%20Images/CompletedAssessment.png" alt="drawing" width="200"/>
+<img src="https://github.com/fraher/AnalysisTool/blob/master/AnalysisTool/Demo%20Images/CompletedAssessment.png" alt="Completed Assessment" width="200"/>
 
 
-<img src="https://github.com/fraher/AnalysisTool/blob/master/AnalysisTool/Demo%20Images/ReportsPage.png" alt="drawing" width="200"/>
-<img src="https://github.com/fraher/AnalysisTool/blob/master/AnalysisTool/Demo%20Images/SharingPage.png" alt="drawing" width="200"/>
+<img src="https://github.com/fraher/AnalysisTool/blob/master/AnalysisTool/Demo%20Images/ReportsPage.png" alt="Reports Page" width="200"/>
+<img src="https://github.com/fraher/AnalysisTool/blob/master/AnalysisTool/Demo%20Images/SharingPage.png" alt="Sharing Page" width="200"/>
 </p>
 
 
@@ -183,9 +183,16 @@ This project could not have started without the wonderful work and effort of the
 * Adriana Cardenas
 * CJ Fraher 
 
-This project still continues today thanks to those who supported the LifeSci Hack event, a big shout out to:
-* moz://a
+This project continues today through grants supported by the following, a special thanks to you all:
+
+<img src="http://www.lifescihack.com/assets/img/support/mozilla-logo-bw-rgb.png" alt="moz://a" width="200"/>
+
+And to those who supported the LifeSci Hack 2019 event!
 * The Leona M. and Harry B. Helmsley Charitable Trust
+* SXSW
+* wework
+* L7 Informatics
+* Swyft
 
 ### Credits
 Royalty free test images currently in use are provided through <a href='https://unsplash.com/'>Unsplash</a>
