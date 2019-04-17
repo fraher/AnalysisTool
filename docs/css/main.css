@@ -1,0 +1,297 @@
+/* FONTS AND STYLES */
+
+html {
+    scroll-behavior: smooth;
+}
+
+.h1, h1 {
+    font-family: "Times New Roman"! important;
+    color: #001cff;
+    font-weight: bold;
+    font-size: 6vw;
+
+}
+
+.h2, h2 {
+    font-family: "Times New Roman"! important;
+    font-size: 3.5vw;
+    font-weight: bold;
+    color: #000000 ! important;
+
+}
+
+.h3, h3 {
+    font-family: "Times New Roman"! important;
+    font-size: 3vw;
+    font-weight: bold;
+    color: #000000 ! important;
+
+}
+
+p {
+    font-family: "Helvetica Neue"! important;
+    font-size: 2vw;
+    color: black;
+
+}
+
+p.about {
+    font-family: "Helvetica Neue"! important;
+    font-size: 2vw;
+    color: black;
+
+}
+
+p.footer {
+    color: white;
+}
+
+.text-muted {
+    font-size:2vw;
+}
+
+/* NAVIGATION BAR */
+
+nav {
+/*    border-top: 3px solid #1c9099;
+    border-bottom: 3px solid #1c9099;
+    border-left: 3px solid #1c9099;
+    border-right: 3px solid #1c9099;*/
+    /*background-color: #e3f6ff;*/
+    margin: 0 1%;
+    text-align: center;
+}
+
+
+.navbar {
+    background-color: #ffffff! important;
+}
+
+
+.navbar-light .navbar-toggler-icon {
+  background-image: url('image/toggle_icon.png')! important;
+    background-size: 100%;
+    border-color: white;
+}
+
+.navbar-toggler .line{
+    width: 100%;
+    float: left;
+    height: 2px;
+    background-color: #fff;
+    margin-bottom: 5px;
+}
+
+.navbar-light .navbar-toggler{
+    border-color: white;
+}
+
+.ml-auto {
+    margin-left: auto!important;
+    margin-left: 200px;
+    margin-right: 0px;
+}
+
+.nav-item {
+
+    margin-left: 20px;
+    justify-content: center;
+}
+
+.navbar-brand {
+    font-size: 30px;
+    font-family: "Times New Roman";
+    font-weight: bolder;
+    margin-right: 20px;
+    color: blue! important;
+    justify-content: center;
+}
+
+a.nav-link {
+    font-size: 25px;
+    font-family: "Times New Roman";
+    font-weight: bolder;
+    margin-right: 20px;
+    color: #000000 ! important;
+    justify-content: center;
+
+}
+
+a.nav-link-hidden {
+    font-size: 25px;
+    font-family: "Times New Roman";
+    font-weight: bolder;
+    color: #1c9099! important;
+    justify-content: center;
+
+}
+
+a.nav-link:hover {
+    color: blue ! important;
+}
+
+
+/* CONTENT */
+
+.img-fluid {
+    max-width: 100%;
+    height: 95%;
+}
+
+.img-fluid2 {
+    max-width: 85%;
+    height: auto;
+    width: auto;
+}
+
+.img-fluid3 {
+    max-width: 50px;
+    height: auto;
+    width: auto;
+}
+
+/* CONTAINERS */
+
+
+/* all screens */
+
+.container-name {
+    margin: 10%;
+    margin-top:11%;
+    margin-bottom: 5%;
+    background-color: #ffffff;
+    height: 50vh;
+    padding: 5%;
+}
+
+
+.pointer-row {
+    margin-left:10%;
+    margin-right: 10%;
+    margin-bottom: 0%
+    justify-content: center;
+    padding: 0%;
+
+}
+
+
+.container-info {
+    margin: 1%;
+    margin-top:10%;
+    margin-bottom: 3%;
+    background-color: #e5e8f9;
+    height: 100vh;
+    padding: 10%;
+    padding-left:8%;
+    padding-top: 6%;
+}
+
+.container-info2 {
+    margin: 1%;
+
+    margin-bottom: 3%;
+    background-color: #f9ceed;
+    height: 80vh;
+    padding: 10%;
+    padding-left:8%;
+    padding-top: 3%;
+}
+
+.container-info3 {
+    margin: 10%;
+    margin-top:7%;
+    margin-bottom: 3%;
+    background-color: #1c9099;
+    height: 80vh;
+    padding: 10%;
+    padding-left:8%;
+    padding-top: 6%;
+}
+
+.container-about {
+    margin: 10%;
+    margin-top:11%;
+    margin-bottom: 3%;
+    background-color: #e5e8f9;
+    height: 65vh;
+    padding: 10%;
+    padding-left:8%;
+    padding-top: 3%;
+
+}
+
+
+.page-container {
+    overflow:hidden;
+    height: 90%;
+}
+
+.footer {
+    padding-top:5%;
+    height: 15vh;
+    background-color: #000000;
+    margin-bottom: 0;
+}
+
+.within-footer {
+    margin: 1%;
+    margin-bottom: 0%;
+    margin-top: 7%
+
+}
+
+/* mobile */
+
+@media screen and (max-width: 768px) {
+    .container-about {
+    margin: 10%;
+    margin-top:20%;
+    margin-bottom: 3%;
+    background-color: #e5e8f9;
+    height: 65vh;
+    padding: 10%;
+    padding-left:8%;
+    padding-top: 3%;
+
+}
+}
+
+@media screen and (max-width: 768px) {
+.container-name {
+    margin: 10%;
+    margin-top:20%;
+    margin-bottom: 5%;
+    background-color: #f9d3c5;
+    height: 40vh;
+    padding: 5%;
+}
+
+}
+
+@media only screen and (max-width: 768px) {
+  p {
+    font-size: 18px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  h1 {
+    font-size: 40px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  h2 {
+    font-size: 25px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .text-muted {
+    font-size: 15px;
+  }
+}
+
+
+
+
