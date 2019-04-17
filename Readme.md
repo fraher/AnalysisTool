@@ -93,17 +93,86 @@ The following example is the current state of the template for a mock test conta
 ```
 
 
+### Milestones
+<b>Milestone 1</b>	
+
+<i>Planning - 2/1/2019 - 4/12/2019</i>
+- [x]	Concept Approval	
+- [x]	Identify Requirements	
+- [ ]	Establish Risks	
+- [x]	Identify Tools	
+- [x]	Develop Budget	
+- [x]	Receive Grant/Award	
+		
+<b>Milestone 2</b>
+
+<i>Research and Development -	2/1/2019 - 6/30/2019</i>
+- [ ]	Identify Subject Matter Experts	
+- [ ]	Research Cognitive Assessments	
+- [ ]	Identify Assessments	
+- [ ]	Develop Standard Assessment Template	
+- [ ]	Implement Requirements	
+- [x]	Configure and Implement CI/CD	
+- [ ]	Develop Software	
+- [ ]	Develop Static Project Site	
+		
+<b>Milestone 3</b>
+
+<i>Verification Testing	- 7/1/2019 - 7/31/2019</i>
+- [ ]	Perform Test Cases	
+- [ ]	Perform Hotfixes	
+		
+<b>Milestone 4</b>
+
+<i>User Acceptance Testing -	8/1/2019 - 8/23/2019</i>
+- [ ]	Deploy to Demo Site	
+- [ ]	Collect User Experience Data	
+- [ ]	Evaluate Results	
+- [ ]	Perform Hotfixes	
+		
+<b>Milestone 5</b>
+
+<i>Release Documentation -	8/24/2019 - 8/31/2019</i>
+- [ ] User Guide
+- [ ] Release Notes
+		
+<b>Milestone 6</b>
+
+<i>Release	- 9/1/2019</i>
+- [ ]	Roll-out v1.0 with Disclaimer	
+		
+<b>Milestone 7</b>
+
+<i>Next Steps	- 9/2/2019 - *</i>
+- [ ]	Discuss v2.0 as Product	
+- [ ]	FDA Requirements	
+- [ ]	Research Assessment Licenses	
+
 
 ### Acknowledgements
+We would first like to thank the LifeSci Hack conference organizers for giving us the opporunity to help the community and open-source healthcare world. These members are: Sarah Sharif, Suliman Sharif, Scott Collins, and Amanda Ross
+
+http://www.lifescihack.com/
+
+This project could not have started without the wonderful work and effort of the hackathon team, FishDreams!
+
+* Jessica Moore Bonner
+* Reva Schweitzer 
+* Sarah Price
+* Adriana Cardenas
+* CJ Fraher 
+
+This project still continues today thanks to those who supported the LifeSci Hack event, a big shout out to:
+* moz://a
+* The Leona M. and Harry B. Helmsley Charitable Trust
+
+### Current Members
 * Sarah Price - sarah.price@utexas.edu
 * Adriana Cardenas - adri.cardenas@utexas.edu
 * CJ Fraher - fraher@gmail.com
-* Jessica Moore Bonner - tsumakiri@gmail.com
-* Reva Schweitzer - revaschweitzer@gmail.com
 
 ### Credits
 Royalty free test images currently in use are provided through <a href='https://unsplash.com/'>Unsplash</a>
-
 
 ### License
 <a href='https://opensource.org/licenses/MIT'>MIT License</a>
