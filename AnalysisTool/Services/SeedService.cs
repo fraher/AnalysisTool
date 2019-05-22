@@ -1,5 +1,7 @@
 ﻿using AnalysisTool.Models;
 using AnalysisTool.Persistence;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using MongoDB.Bson;
@@ -13,50 +15,46 @@ using static AnalysisTool.Models.SystemConstants;
 
 namespace AnalysisTool.Services
 {
-    public static class SeedService
-    {
-        public static void Seed(IServiceProvider serviceProvider)
+    public class SeedService
+    {        
+        public static void SeedUsers(IServiceProvider services)
         {
-            var _unitOfWork = serviceProvider.GetRequiredService<IUnitOfWork>();
+            UserManager<User> _userManager;
+            RoleManager<Role> _roleManager;            
             
-            // Populate Users
-            if(_unitOfWork.Users.GetAll().Count() == 0)
+            _userManager = services.GetRequiredService<UserManager<User>>();
+            _roleManager = services.GetRequiredService<RoleManager<Role>>();
+           
+            if (!_roleManager.RoleExistsAsync("Administrator").Result)
             {
-                List<User> users = new List<User>
-                {
-                    new User
-                    {
-                        Id = null,
-                        UserName = "admin",
-                        TypeOfUser = UserType.Administrator
-                    },
-                    new User
-                    {
-                        Id = null,
-                        UserName = "patient123",
-                        TypeOfUser = UserType.Patient,
-                        PatientGender = Gender.Male,
-                        BirthYear = 1950
-                    },
-                    new User
-                    {
-                        Id = null,
-                        UserName = "doctor123",
-                        TypeOfUser = UserType.Provider,
-                        ProviderName = "Dr. Xavier",
-                        Institution = "Xavier School for the Gifted"
-                    }
-                };
+                Role role = new Role();
+                role.Name = "Administrator";
+                IdentityResult roleResult = _roleManager.CreateAsync(role).Result;
+            }
 
-                foreach(var user in users)
+            if(_userManager.FindByNameAsync("admin").Result == null)
+            {
+                User user = new User();
+                user.UserName = "admin";
+                user.Email = "fraher@gmail.com";
+
+                IdentityResult userResult = _userManager.CreateAsync(user, "Test123!").Result;
+
+                if(userResult.Succeeded)
                 {
-                    _unitOfWork.Users.Add(user);
+                    _userManager.AddToRoleAsync(user, "Administrator").Wait();
                 }
             }
             
 
+            
+        }
+
+        public static void SeedAssessments(IUnitOfWork unitOfWork)
+        {            
+
             // Populate Assessments
-            if (_unitOfWork.Assessments.GetAll().Count() == 0)
+            if (unitOfWork.Assessments.GetAll().Count() == 0)
             {
 
                 List<Assessment> assessments = new List<Assessment>
@@ -84,7 +82,7 @@ namespace AnalysisTool.Services
                                 ResponseParams = new ResponseParams
                                 {
                                     ResponseType = "text"
-                                }                                
+                                }
                             },
                             new AssessmentStep
                             {
@@ -108,17 +106,14 @@ namespace AnalysisTool.Services
                     }
                 };
 
-                foreach(var assessment in assessments)
+                foreach (var assessment in assessments)
                 {
-                    _unitOfWork.Assessments.Add(assessment);
+                    unitOfWork.Assessments.Add(assessment);
                 }
-                
+
 
             }
-
         }
-
-
-
+        
     }
 }

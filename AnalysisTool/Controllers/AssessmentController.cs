@@ -39,10 +39,10 @@ namespace AnalysisTool.Controllers
             return View(_model);
         }
 
-        public PartialViewResult _Template(AssessmentViewModel assessment)
+        public PartialViewResult _Template(AssessmentViewModel assessmentVM)
         {  //Gets the requested parameter and returns the view page
 
-            return PartialView(assessment);
+            return PartialView(assessmentVM);
         }
 
         public IActionResult Completed()

@@ -9,7 +9,7 @@ namespace AnalysisTool.Persistence
 {
     public interface IAnalysisToolContext
     {
-        IMongoCollection<User> Users { get; }
+        IMongoCollection<User> Usersx { get; }
         IMongoCollection<Assessment> Assessments { get; }
         IMongoCollection<PrescribedAssessment> PrescribedAssessments { get; }
         IMongoCollection<AssessmentSession> AssessmentSessions { get; }

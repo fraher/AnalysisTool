@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AnalysisTool.ViewModels
 {
-    public class HomeViewModel
+    public class MenuViewModel
     {
         public User User { get; set; }
     }
