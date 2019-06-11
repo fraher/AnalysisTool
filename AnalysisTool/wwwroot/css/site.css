@@ -1,10 +1,10 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification\ 
 for details on configuring this project to bundle and minify static web assets. */
 body {
-    padding-top: 50px;
+    /*padding-top: 50px;*/
     padding-bottom: 20px;
-    background-color: #313656;
-    color: white;
+    /*background-color: #313656;
+    color: white;*/
     
 }
 
@@ -18,7 +18,7 @@ body {
 }
 
 label {
-    color: white;
+    color: black;
 }
 
 input, select, textarea, table, thead, tbody, th, td {
@@ -26,7 +26,7 @@ input, select, textarea, table, thead, tbody, th, td {
 }
 
 thead {
-    background-color:white;
+    background-color:black;
 }
 
 /* Wrapping element */
@@ -37,26 +37,26 @@ thead {
 }
 
 a {
-    color: white;
+    color: black;
 }
 
 a:hover {
-    color: white;
+    color: black;
     text-decoration: none;
 }
 
 a:link {
-    color: white;
+    color: black;
     text-decoration: none;
 }
 
 a:visited {
-    color: white;
+    color: black;
     text-decoration: none;
 }
 
 a:active {
-    color: white;
+    color: black;
     text-decoration: none;
 }
 

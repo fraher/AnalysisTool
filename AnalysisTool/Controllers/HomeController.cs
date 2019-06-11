@@ -7,13 +7,17 @@ using Microsoft.AspNetCore.Mvc;
 using AnalysisTool.Models;
 using AnalysisTool.ViewModels;
 using AnalysisTool.Persistence;
+using Microsoft.AspNetCore.Authorization;
 
 namespace AnalysisTool.Controllers
 {
     public class HomeController : Controller
     {
+        [Authorize]        
         public IActionResult Index()
         {
+            
+
             return View();
         }
 
