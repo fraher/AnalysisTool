@@ -19,7 +19,7 @@ namespace AnalysisTool.Controllers
             _model = new ProviderViewModel();
         }
 
-        public IActionResult Provider()
+        public IActionResult Index()
         {
             return View();
         }

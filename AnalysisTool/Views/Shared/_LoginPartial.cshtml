@@ -13,10 +13,10 @@
             @if (User.IsInRole("Administrator"))
             {
                 <li><a asp-controller="Report" asp-action="Index">Report</a></li>
-                <li><a asp-controller="Provider" asp-action="Provider">Provider</a></li>
+                <li><a asp-controller="Provider" asp-action="Index">Provider</a></li>
             }
 
-            <li><a asp-controller="Manage" asp-action="Index" title="Manage">Manage Account</a></li>
+            <li><a asp-controller="Manage" asp-action="Index">Manage Account</a></li>
             <li><a asp-controller="Home" asp-action="About">About</a></li>
             <li><button type="submit" class="btn btn-link navbar-btn navbar-link">Log off</button></li>
         </ul>

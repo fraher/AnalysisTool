@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using AnalysisTool.Models;
@@ -14,11 +8,8 @@ using AnalysisTool.Services;
 using AnalysisTool.Persistence;
 using AnalysisTool.Persistence.Repositories;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.UI;
-using AspNetCore.Identity.MongoDbCore.Models;
 using AspNetCore.Identity.MongoDbCore.Infrastructure;
-using AspNetCore.Identity.MongoDbCore.Extensions;
-using Microsoft.Extensions.Options;
+using Microsoft.AspNetCore.Identity.UI.Services;
 
 namespace AnalysisTool
 {
@@ -56,9 +47,12 @@ namespace AnalysisTool
 
             services.AddTransient<IUnitOfWork, UnitOfWork>();
 
-
+            services.AddTransient<IEmailSender, AuthMessageSender>();
             // Compatibility
             services.AddMvc();
+
+
+            
         }
         
 

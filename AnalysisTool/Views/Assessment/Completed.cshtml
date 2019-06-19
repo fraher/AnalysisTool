@@ -4,13 +4,6 @@
     ViewData["Title"] = "Fish Dreams - Assessment Complete";
 }
 
-<div class="row">
-    <div class="text-center">
-        <a href="@Url.Action("Index", "Home")" aria-label="Home">
-            <i class="fa fa-home fa-3x"></i>
-        </a>
-    </div>
-</div>
 
 <div class="row padding-top">
     <div class="text-center">
@@ -20,11 +13,17 @@
 
 <div class="row padding-top">
     <div class="text-center">
-        @if (Model)
-        {
-            <a href="@Url.Action("Assessment", "Assessment")">Next Assessment</a>
-        }
-                
         
+        <div class="row">
+            @if (Model)
+            {
+                <a asp-controller="Assessment" asp-action="Assessment" class="btn btn-success">Next Assessment</a>
+            }
+        </div>
+
+        <div class="row padding-top">
+            <a asp-controller="Home" asp-action="Index" class="btn btn-default">Return to Menu</a>
+        </div>
+
     </div>
 </div>

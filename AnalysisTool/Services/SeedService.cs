@@ -36,7 +36,7 @@ namespace AnalysisTool.Services
             {
                 User user = new User();
                 user.UserName = "admin";
-                user.Email = "fraher@gmail.com";
+                user.Email = "admin@nowhere.com";
 
                 IdentityResult userResult = _userManager.CreateAsync(user, "Test123!").Result;
 
