@@ -188,11 +188,11 @@ This project could not have started without the wonderful work and effort of the
 * Reva Schweitzer 
 * Sarah Price
 * Adriana Cardenas
-* CJ Fraher 
+* Christopher J Fraher 
 
 This project continues today through grants supported by the following, a special thanks to you all:
 
-<img src="http://www.lifescihack.com/assets/img/support/mozilla-logo-bw-rgb.png" alt="moz://a" width="200"/>
+Moz://a
 
 And to those who supported the LifeSci Hack 2019 event!
 * The Leona M. and Harry B. Helmsley Charitable Trust
