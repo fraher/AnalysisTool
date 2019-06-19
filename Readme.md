@@ -104,11 +104,16 @@ The following example is the current state of the template for a mock test conta
     ]
 }
 
-
-
-
 ```
 
+### User Management
+The application leverages Microsofts Identity Service for user management supported on MongoDb. Support for MongoDb is provided by [AspNetCore.Identity.MongoDbCore](https://github.com/alexandre-spieser/AspNetCore.Identity.MongoDbCore) written by Alexandre Spieser.
+
+In development mode, a seed service adds the following default user:
+
+<b>UserName</b>: admin
+
+<b>Password</b>: Test123!
 
 ### Milestones
 <b>Milestone 1</b>	
