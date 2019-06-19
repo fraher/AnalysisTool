@@ -1,6 +1,6 @@
 using System;
 
-namespace AnalysisTool.Models
+namespace AnalysisTool.ViewModels
 {
     public class ErrorViewModel
     {

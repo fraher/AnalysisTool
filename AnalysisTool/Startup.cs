@@ -1,19 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using AnalysisTool.Models;
-using Microsoft.EntityFrameworkCore;
 using AnalysisTool.Services;
 using AnalysisTool.Persistence;
 using AnalysisTool.Persistence.Repositories;
+using Microsoft.AspNetCore.Identity;
+using AspNetCore.Identity.MongoDbCore.Infrastructure;
+using Microsoft.AspNetCore.Identity.UI.Services;
 
 namespace AnalysisTool
 {
@@ -29,20 +25,21 @@ namespace AnalysisTool
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            // Get the Db Connection String/DB Name
+            var settings = Configuration.GetSection(nameof(MongoDbSettings)).Get<MongoDbSettings>();
+
+            // Add DB Context to services
+            Configuration.Bind(nameof(MongoDbSettings), settings);
+            services.AddSingleton(settings);
+
+
+            // Add Identity Server
+            services.AddIdentity<User, Role>()
+                    .AddMongoDbStores<User, Role, Guid>(settings.ConnectionString, settings.DatabaseName)
+                    .AddDefaultTokenProviders();
             
-
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-
-
-            services.Configure<Settings>(options =>
-            {
-                options.ConnectionString
-                    = Configuration.GetSection("ConnectionStrings:AnalysisToolDb").Value;
-                options.Database
-                    = Configuration.GetSection("ConnectionStrings:DatabaseName").Value;
-            });
-
-            services.AddTransient<IUserRepository, UserRepository>();
+            // Injection
+            
             services.AddTransient<IAssessmentRepository, AssessmentRepository>();
             services.AddTransient<IPrescribedAssessmentRepository, PrescribedAssessmentRepository>();
             services.AddTransient<IAssessmentSessionRepository, AssessmentSessionRepository>();
@@ -50,17 +47,25 @@ namespace AnalysisTool
 
             services.AddTransient<IUnitOfWork, UnitOfWork>();
 
-            
+            services.AddTransient<IEmailSender, AuthMessageSender>();
+            // Compatibility
+            services.AddMvc();
 
+
+            
         }
         
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, IServiceProvider services)
         {
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                app.UseDatabaseErrorPage();
+
+                
+
             }
             else
             {
@@ -70,6 +75,8 @@ namespace AnalysisTool
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+            app.UseCookiePolicy();
+            app.UseAuthentication();
 
             app.UseMvc(routes =>
             {
@@ -79,8 +86,10 @@ namespace AnalysisTool
             });
 
             // Populate the database with seed data
-            
-            SeedService.Seed(app.ApplicationServices);
+            SeedService.SeedUsers(services);
+
+            // now need to seed the assessments
+            SeedService.SeedAssessments(services.GetService<IUnitOfWork>());
         }
     }
 }

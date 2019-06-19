@@ -20,12 +20,28 @@
     </environment>
 </head>
 <body>
-    
+
 
     <partial name="_CookieConsentPartial" />
 
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a asp-controller="Home" asp-action="Index" class="navbar-brand">Analysis Tool</a>
+            </div>
+            <div class="navbar-collapse collapse">                
+                @await Html.PartialAsync("_LoginPartial")
+            </div>
+        </div>
+    </div>
     <div class="container body-content">
-        @RenderBody()        
+        @RenderBody()
     </div>
 
     <environment include="Development">

@@ -15,14 +15,14 @@ namespace AnalysisTool.Persistence
         public UnitOfWork(IAnalysisToolContext context)
         {
             _context = context;
-            Users = new UserRepository(_context);
+            
             Assessments = new AssessmentRepository(_context);
             AssessmentSessions = new AssessmentSessionRepository(_context);
             PrescribedAssessments = new PrescribedAssessmentRepository(_context);
         }
 
 
-        public IUserRepository Users { get; private set; }
+        
         public IAssessmentRepository Assessments { get; private set; }
         public IAssessmentSessionRepository AssessmentSessions { get; private set; }
         public IPrescribedAssessmentRepository PrescribedAssessments { get; private set; }      

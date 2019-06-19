@@ -2,23 +2,19 @@
 for details on configuring this project to bundle and minify static web assets. */
 body {
     padding-top: 50px;
-    padding-bottom: 20px;
-    background-color: #313656;
-    color: white;
-    
+    padding-bottom: 20px;    
 }
 
 .body-start {
 
     background-image: url('/images/brain.png');
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
+    background-repeat: no-repeat;    
+    background-position: center;    
     background-size: contain;
 }
 
 label {
-    color: white;
+    color: black;
 }
 
 input, select, textarea, table, thead, tbody, th, td {
@@ -26,7 +22,7 @@ input, select, textarea, table, thead, tbody, th, td {
 }
 
 thead {
-    background-color:white;
+    background-color:black;
 }
 
 /* Wrapping element */
@@ -37,26 +33,26 @@ thead {
 }
 
 a {
-    color: white;
+    color: black;
 }
 
 a:hover {
-    color: white;
+    color: black;
     text-decoration: none;
 }
 
 a:link {
-    color: white;
+    color: black;
     text-decoration: none;
 }
 
 a:visited {
-    color: white;
+    color: black;
     text-decoration: none;
 }
 
 a:active {
-    color: white;
+    color: black;
     text-decoration: none;
 }
 

@@ -1,4 +1,5 @@
 ﻿using AnalysisTool.Persistence;
+using AspNetCore.Identity.MongoDbCore.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Options;
@@ -15,25 +16,25 @@ namespace AnalysisTool.Models
 
 
 
-        private readonly IMongoDatabase _db;
+        private readonly IMongoDatabase _db;        
 
-        public AnalysisToolContext(IOptions<Settings> settings)
+        public AnalysisToolContext(MongoDbSettings settings)
         {
-
+            
             //var databaseName = config.GetValue<string>("DatabaseName");
             //var client = new MongoClient(config.GetConnectionString(databaseName));
-            var client = new MongoClient(settings.Value.ConnectionString);
-
+            var client = new MongoClient(settings.ConnectionString);            
+            
             if(client != null)
             {
-                _db = client.GetDatabase(settings.Value.Database);
+                _db = client.GetDatabase(settings.DatabaseName);
             }
             
 
         }
 
 
-        public IMongoCollection<User> Users
+        public IMongoCollection<User> Usersx
         {
             get
             {
