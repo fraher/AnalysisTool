@@ -13,9 +13,11 @@ variables:
   buildConfiguration: 'Release'
 
 steps:
-- script: dotnet restore ./All.sln
-  displayName: Restore
-  workingDirectory: $(workingDirectory)
+# .NET Core Restore NuGet packages.
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'restore'
+    projects: '**/*.csproj'
 
 - script: dotnet build --configuration $(buildConfiguration)
   displayName: 'dotnet build $(buildConfiguration)'
