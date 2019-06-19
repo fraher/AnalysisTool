@@ -1,5 +1,7 @@
+[![Build Status](https://dev.azure.com/fishdreams/AnalysisTool/_apis/build/status/fraher.AnalysisTool?branchName=master)](https://dev.azure.com/fishdreams/AnalysisTool/_build/latest?definitionId=1&branchName=master)
+
 # Fish Dreams 
-## Longitudinal Tracking of Cognitive Impairment
+## Longitudinal Tracking of Cognitive Impairment 
 
 **Introduction**
 This tool allows providers to track cognitive assessments for high-risk MCI patients. 
