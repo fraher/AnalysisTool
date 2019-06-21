@@ -63,9 +63,6 @@ namespace AnalysisTool
             {
                 app.UseDeveloperExceptionPage();
                 app.UseDatabaseErrorPage();
-
-                
-
             }
             else
             {
@@ -85,11 +82,17 @@ namespace AnalysisTool
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
 
-            // Populate the database with seed data
-            SeedService.SeedUsers(services);
 
-            // now need to seed the assessments
-            SeedService.SeedAssessments(services.GetService<IUnitOfWork>());
+
+
+            // Populate the database with seed data
+            SeedService.SeedRoles(services);
+
+            if (env.IsDevelopment())
+            {
+                SeedService.SeedUsers(services);                
+                SeedService.SeedAssessments(services.GetService<IUnitOfWork>());
+            }            
         }
     }
 }
