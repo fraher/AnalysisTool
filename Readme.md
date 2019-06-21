@@ -111,11 +111,20 @@ The following example is the current state of the template for a mock test conta
 ### User Management
 The application leverages Microsofts Identity Service for user management supported on MongoDb. Support for MongoDb is provided by [AspNetCore.Identity.MongoDbCore](https://github.com/alexandre-spieser/AspNetCore.Identity.MongoDbCore) written by Alexandre Spieser.
 
-In development mode, a seed service adds the following default user:
+Two roles exist in this application an Administrator and a Particpant. Since no user at this time will be a super user, the Administrator will be the researcher/provider user type. The Particpant will be the user taking the assessments.
 
-<b>UserName</b>: admin
+In development mode, a seed service adds the following default users:
 
+<b>User Type</b>: Administrator</br>
+<b>User Name</b>: admin</br>
+<b>Email</b>: admin@nowhere.com</br>
 <b>Password</b>: Test123!
+
+<b>User Type</b>: Participant</br>
+<b>User Name</b>: bob</br>
+<b>Email</b>: bob@nowhere.com</br>
+<b>Password</b>: Test123!
+
 
 ### Milestones
 <b>Milestone 1</b>	
