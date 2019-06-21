@@ -2,7 +2,6 @@ using System;
 using Xunit;
 using Moq;
 using AnalysisTool.Controllers;
-using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
 namespace AnalysisToolTests
