@@ -1,36 +1,50 @@
 ﻿using AnalysisTool.Models;
 using AnalysisTool.Persistence;
-using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using MongoDB.Bson;
-using MongoDB.Bson.Serialization.IdGenerators;
 using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
-using static AnalysisTool.Models.SystemConstants;
 
 namespace AnalysisTool.Services
 {
     public class SeedService
     {        
-        public static void SeedUsers(IServiceProvider services)
+        /// <summary>
+        /// This method establishes all user types in the system.
+        /// </summary>
+        /// <param name="services">Takes in the services provider managing the application.</param>
+        public static void SeedRoles(IServiceProvider services)
         {
-            UserManager<User> _userManager;
-            RoleManager<Role> _roleManager;            
+            RoleManager<Role> _roleManager;
             
-            _userManager = services.GetRequiredService<UserManager<User>>();
             _roleManager = services.GetRequiredService<RoleManager<Role>>();
-           
+
             if (!_roleManager.RoleExistsAsync("Administrator").Result)
             {
                 Role role = new Role();
                 role.Name = "Administrator";
                 IdentityResult roleResult = _roleManager.CreateAsync(role).Result;
             }
+
+            if (!_roleManager.RoleExistsAsync("Participant").Result)
+            {
+                Role role = new Role();
+                role.Name = "Participant";
+                IdentityResult roleResult = _roleManager.CreateAsync(role).Result;
+            }
+        }
+
+        /// <summary>
+        /// This is a development only method which creates a default admin user and a default participant
+        /// </summary>
+        /// <param name="services">Takes in the services provider managing the application.</param>
+        public static void SeedUsers(IServiceProvider services)
+        {
+            UserManager<User> _userManager;            
+            
+            _userManager = services.GetRequiredService<UserManager<User>>();            
 
             if(_userManager.FindByNameAsync("admin").Result == null)
             {
@@ -45,11 +59,28 @@ namespace AnalysisTool.Services
                     _userManager.AddToRoleAsync(user, "Administrator").Wait();
                 }
             }
-            
 
-            
+            if (_userManager.FindByNameAsync("bob").Result == null)
+            {
+                User user = new User();
+                user.UserName = "bob";
+                user.Email = "bob@nowhere.com";
+
+                IdentityResult userResult = _userManager.CreateAsync(user, "Test123!").Result;
+
+                if (userResult.Succeeded)
+                {
+                    _userManager.AddToRoleAsync(user, "Participant").Wait();
+                }
+            }
+
+
         }
 
+        /// <summary>
+        /// This is a development only method which populates the database with default assessments.
+        /// </summary>
+        /// <param name="unitOfWork">This provides a stateful model connection to the database.</param>
         public static void SeedAssessments(IUnitOfWork unitOfWork)
         {            
 
